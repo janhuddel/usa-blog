@@ -1,0 +1,38 @@
+---
+layout: default
+title: Home
+---
+
+{% for post in paginator.posts %}
+<article
+  class="post type-post status-publish format-standard hentry category-uncategorized"
+>
+  <header class="entry-header">
+    <h1 class="entry-title">
+      <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+    </h1>
+    <div class="entry-meta">
+      <span class="entry-date"
+        ><a href="{{ post.url }}" rel="bookmark">
+          <time
+            class="entry-date"
+            datetime="{{ post.date | date_to_xmlschema }}"
+            >{{ post.date | date: '%B %d, %Y' }}</time
+          >
+        </a>
+      </span>
+    </div>
+  </header>
+
+  <div class="entry-content">
+    <p>
+      {{ post.content | truncatewords: 100 | strip_html }}
+      <br />
+      <a href="{{ post.url }}" class="more-link">
+        <span class="screen-reader-text">{{ post.title }}</span>weiterlesen
+        <span class="meta-nav">→</span>
+      </a>
+    </p>
+  </div>
+</article>
+{% endfor %}

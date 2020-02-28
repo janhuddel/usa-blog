@@ -24,3 +24,17 @@ layout: default
     {{ content }}
   </div>
 </article>
+<nav class="navigation post-navigation" role="navigation">
+  <h1 class="screen-reader-text">Beitrags-Navigation</h1>
+  <div class="nav-links">
+    {% if page.previous.url %}
+    <a href="{{site.baseurl}}{{page.previous.url}}" rel="prev">
+      <span class="meta-nav">Vorheriger Beitrag</span>{{page.previous.title}}
+    </a>
+    {% endif %} {% if page.next.url %}
+    <a href="{{site.baseurl}}{{page.next.url}}" rel="next">
+      <span class="meta-nav">Nächster Beitrag</span>{{page.next.title}}
+    </a>
+    {% endif %}
+  </div>
+</nav>

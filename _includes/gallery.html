@@ -6,11 +6,14 @@
       <li>
         <div class="box">
           <a
-            href="{{ include.gallery.folder }}{{ img.filename }}"
+            href="{{ site.baseurl }}{{ include.gallery.folder }}{{ img.filename }}"
             data-lightbox="gallery-{{include.gallery.id}}"
             data-title="{{ img.description }}"
           >
-            <img class="thumb" src="{{ include.gallery.folder }}{{ thumb }}" />
+            <img
+              class="thumb"
+              src="{{ site.baseurl }}{{ include.gallery.folder }}{{ thumb }}"
+            />
           </a>
           {% if img.copyright %}
           <span>© {{ img.copyright }}</span>

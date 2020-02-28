@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <div class="lb-gallery">
+    <ul>
+      {% for img in include.gallery.images %} {% assign thumb = img.filename |
+      replace: ".jpg", "_sm.jpg" %}
+      <li>
+        <div class="box">
+          <a
+            href="{{ include.gallery.folder }}{{ img.filename }}"
+            data-lightbox="gallery-{{include.gallery.id}}"
+            data-title="{{ img.description }}"
+          >
+            <img class="thumb" src="{{ include.gallery.folder }}{{ thumb }}" />
+          </a>
+          {% if img.copyright %}
+          <span>© {{ img.copyright }}</span>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

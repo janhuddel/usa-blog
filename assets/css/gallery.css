@@ -1,0 +1,31 @@
+.lb-gallery {
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.lb-gallery ul {
+  list-style: none;
+}
+
+.lb-gallery li {
+  padding: 10px;
+  float: left;
+}
+
+.lb-gallery .thumb {
+  width: 125px;
+  height: 125px;
+  border-radius: 5%;
+}
+
+.lb-gallery .box {
+  float: right;
+  width: 125px;
+}
+
+.lb-gallery .box span {
+  display: block;
+  font-size: xx-small;
+}

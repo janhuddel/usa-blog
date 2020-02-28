@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article
+  class="post type-post status-publish format-standard hentry category-uncategorized"
+>
+  <header class="entry-header">
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <div class="entry-meta">
+      <span class="entry-date">
+        <a href="https://usa.rohwer.sh/2014/09/san-francisco/" rel="bookmark">
+          <time
+            class="entry-date"
+            datetime="{{ page.date | date_to_xmlschema }}"
+          >
+            {{ page.date | date: '%B %d, %Y' }}
+          </time>
+        </a>
+      </span>
+    </div>
+  </header>
+  <div class="entry-content">
+    {{ content }}
+  </div>
+</article>

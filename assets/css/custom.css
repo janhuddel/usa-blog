@@ -1,3 +1,8 @@
+div.excerpt p {
+  margin-bottom: 0px;
+}
+
+/* lightbox gallery */
 .lb-gallery {
   display: table;
   margin: 0 auto;

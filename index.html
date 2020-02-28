@@ -24,15 +24,12 @@ title: Home
     </div>
   </header>
 
-  <div class="entry-content">
-    <p>
-      {{ post.content | truncatewords: 100 | strip_html }}
-      <br />
-      <a href="{{ post.url }}" class="more-link">
-        <span class="screen-reader-text">{{ post.title }}</span>weiterlesen
-        <span class="meta-nav">→</span>
-      </a>
-    </p>
+  <div class="entry-content excerpt">
+    {{ post.excerpt }}
+    <a href="{{ post.url }}" class="more-link">
+      <span class="screen-reader-text">{{ post.title }}</span>weiterlesen
+      <span class="meta-nav">→</span>
+    </a>
   </div>
 </article>
 {% endfor %}

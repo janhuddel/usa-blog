@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>USA Westcoast Tour 2014 | Unsere Flitterwochen</title>
+    <title>{{ site.title }} |  {{ site.subtitle }}</title>
     <link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
 
     <!-- Stylesheets -->
@@ -28,10 +28,10 @@
       type="text/css"
       media="all"
     />
-    <link
+    <link 
       rel="stylesheet"
-      id="main-style-css"
-      href="{{ site.baseurl }}/assets/css/gallery.css"
+      id="custom-style-css"
+      href="{{ site.baseurl }}/assets/css/custom.css"
       type="text/css"
       media="all"
     />
@@ -61,9 +61,9 @@
   <body
     class="home blog custom-background wp-embed-responsive header-image list-view full-width grid"
   >
-    <div id="page" class="hfeed site">
+      <div id="page" class="hfeed site">
       <div id="site-header">
-        <a href="{{ site.baseurl }}" rel="home">
+        <a href="{{ site.url }}" rel="home">
           <img
             src="{{ site.baseurl }}/assets/images/los-angeles-title.jpg  "
             width="1260"
@@ -76,9 +76,7 @@
       <header id="masthead" class="site-header" role="banner">
         <div class="header-main">
           <h1 class="site-title">
-            <a href="{{ site.baseurl }}" rel="home"
-              >USA Westcoast Tour 2014</a
-            >
+            <a href="{{ site.url }}" rel="home">{{ site.title }}</a>
           </h1>
       </header>
 
@@ -92,7 +90,7 @@
         </div>
 
         <div id="secondary">
-          <h2 class="site-description">Unsere Flitterwochen</h2>
+          <h2 class="site-description">{{ site.subtitle }}</h2>
 
           <div
             id="primary-sidebar"
@@ -102,31 +100,11 @@
             <aside id="recent-posts-2" class="widget widget_recent_entries">
               <h1 class="widget-title">Neueste Beiträge</h1>
               <ul>
+                {% for post in site.posts %}
                 <li>
-                  <a href="https://usa.rohwer.sh/2014/09/odile-das-arschloch/"
-                    >Odile, das Arschloch</a
-                  >
+                  <a href="{{ post.url }}">{{ post.title }}</a>
                 </li>
-                <li>
-                  <a href="https://usa.rohwer.sh/2014/09/san-francisco/"
-                    >San Francisco</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://usa.rohwer.sh/2014/09/tour-von-yosemite-nach-san-francisco/"
-                    >Tour von Yosemite nach San Francisco</a
-                  >
-                </li>
-                <li>
-                  <a href="https://usa.rohwer.sh/2014/09/yosemite/">Yosemite</a>
-                </li>
-                <li>
-                  <a
-                    href="https://usa.rohwer.sh/2014/09/tour-von-death-valley-nach-yosemite/"
-                    >Tour von Death Valley nach Yosemite</a
-                  >
-                </li>
+                {% endfor %}
               </ul>
             </aside>
             <aside id="recent-comments-2" class="widget widget_recent_comments">

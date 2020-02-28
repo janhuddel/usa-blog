@@ -1,4 +1,9 @@
-baseurl: "" # the subpath of your site, e.g. /blog
+title: USA Westcoast Tour 2014
+subtitle: Unsere Flitterwochen
+
+baseurl: ""
+url: "https://usa.rohwer.sh"
+
 permalink: /:year-:month-:day/:title/
 paginate: 5
 

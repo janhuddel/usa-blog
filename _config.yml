@@ -1,1 +1,2 @@
+baseurl: "/usa-blog" # the subpath of your site, e.g. /blog
 permalink: /:year-:month-:day/:title/

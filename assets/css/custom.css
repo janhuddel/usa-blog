@@ -12,6 +12,7 @@ div.excerpt p {
 
 .lb-gallery ul {
   list-style: none;
+  margin: auto;
 }
 
 .lb-gallery li {
@@ -20,17 +21,17 @@ div.excerpt p {
 }
 
 .lb-gallery .thumb {
-  width: 125px;
-  height: 125px;
+  width: 135px;
+  height: 135px;
   border-radius: 5%;
 }
 
 .lb-gallery .box {
   float: right;
-  width: 125px;
+  width: 135px;
 }
 
 .lb-gallery .box span {
   display: block;
-  font-size: xx-small;
+  font-size: x-small;
 }

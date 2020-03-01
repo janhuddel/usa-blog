@@ -70,7 +70,7 @@ body {
 .day {
   border-bottom: 1px solid rgba(166, 168, 179, 0.12);
   border-right: 1px solid rgba(166, 168, 179, 0.12);
-  padding: 14px 20px;
+  padding: 7px 10px;
   letter-spacing: 1px;
   font-size: 12px;
   box-sizing: border-box;
@@ -82,6 +82,16 @@ body {
 
 .day div.daynumber {
   text-align: right;
+}
+
+.day div.daycontent {
+  padding: 5px;
+  background-color: #24890d;
+}
+
+.day div.daycontent a {
+  font-size: x-small;
+  color: rgb(255, 255, 255);
 }
 
 .day:nth-of-type(7n + 7) {

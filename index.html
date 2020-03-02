@@ -33,3 +33,36 @@ title: Home
   </div>
 </article>
 {% endfor %}
+
+<!-- pagination -->
+<nav class="navigation paging-navigation" role="navigation">
+  <h1 class="screen-reader-text">Beitrags-Navigation</h1>
+  <div class="pagination loop-pagination">
+    {% if paginator.previous_page %}
+    <a
+      class="prev page-numbers"
+      href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+    >
+      ← Zurück
+    </a>
+    {% endif %} {% for page in (1..paginator.total_pages) %} {% if page ==
+    paginator.page %}
+    <span aria-current="page" class="page-numbers current">{{ page }}</span>
+    {% elsif page == 1 %}
+    <a class="page-numbers" href="/">{{ page }}</a>
+    {% else %}
+    <a
+      class="page-numbers"
+      href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"
+      >{{ page }}</a
+    >
+    {% endif %} {% endfor %} {% if paginator.next_page %}
+    <a
+      class="next page-numbers"
+      href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"
+    >
+      Weiter →
+    </a>
+    {% endif %}
+  </div>
+</nav>

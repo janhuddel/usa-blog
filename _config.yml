@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://usa.rohwer.sh"
 
 permalink: /:year-:month-:day/:title/
-paginate: 5
+paginate: 8
 
 plugins:
   - jekyll-paginate

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tour von Tusayan nach Las
+title: Tour von Tusayan nach Las Vegas
 
 gallery_1:
   id: 1

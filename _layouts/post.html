@@ -2,18 +2,14 @@
 layout: default
 ---
 
-<article
-  class="post type-post status-publish format-standard hentry category-uncategorized"
->
+<!-- Blog-Post -->
+<article class="post type-post status-publish format-standard hentry category-uncategorized">
   <header class="entry-header">
     <h1 class="entry-title">{{ page.title }}</h1>
     <div class="entry-meta">
       <span class="entry-date">
         <a href="#" rel="bookmark">
-          <time
-            class="entry-date"
-            datetime="{{ page.date | date_to_xmlschema }}"
-          >
+          <time class="entry-date" datetime="{{ page.date | date_to_xmlschema }}">
             {{ page.date | date: '%B %d, %Y' }}
           </time>
         </a>
@@ -24,6 +20,8 @@ layout: default
     {{ content }}
   </div>
 </article>
+
+<!-- Navigation -->
 <nav class="navigation post-navigation" role="navigation">
   <h1 class="screen-reader-text">Beitrags-Navigation</h1>
   <div class="nav-links">
@@ -38,3 +36,40 @@ layout: default
     {% endif %}
   </div>
 </nav>
+
+<!-- Comments -->
+{% if site.data.comments[page.id] %}
+<div id="comments" class="comments-area">
+  <h2 class="comments-title">
+    {% if site.data.comments[page.id].size == 1 %}
+    Ein Gedanke zu „{{ page.title }}“
+    {% else %}
+    {{ site.data.comments[page.id].size }} Gedanken zu „{{ page.title }}“
+    {% endif %}
+  </h2>
+  <ol class="comment-list">
+    {% for comment in site.data.comments[page.id] %}
+    <li id="comment-{{ forloop.index }}" class="comment even thread-even depth-1">
+      <article id="div-comment-{{ forloop.index }}" class="comment-body">
+        <footer class="comment-meta">
+          <div class="comment-author vcard">
+            <img alt="" src="{{ comment.avatar }}" class="avatar avatar-34 photo" height="34" width="34">
+            <b class="fn">{{ comment.author }}</b>
+            <span class="says">sagt:</span>
+          </div>
+          <div class="comment-metadata">
+            <a href="{{ page.url }}#comment-{{ forloop.index }}">
+              <time datetime="{{ comment.date }}">{{ comment.date | date: "%d. %B %Y um %k:%M Uhr" }}</time>
+            </a>
+          </div>
+        </footer>
+        <div class="comment-content">
+          <p>{{ comment.body }}</p>
+        </div>
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+  <p class="no-comments">Kommentare sind geschlossen.</p>
+</div>
+{% endif %}

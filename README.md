@@ -4,11 +4,11 @@ Erstellt mit einem Static Site Generator ([Jekyll](https://jekyllrb.com/))
 
 # Start local server
 ```
-jekyll serve
+bundle install
+bundle exec jekyll serve
 ```
 
 # Update dependencies
 ```
 bundle update
 ```
-

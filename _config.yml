@@ -9,3 +9,6 @@ paginate: 8
 
 plugins:
   - jekyll-paginate
+
+exclude:
+  - AGENTS.md
